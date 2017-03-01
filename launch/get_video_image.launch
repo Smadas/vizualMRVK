@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+
+<launch>
+	<node pkg="opencv_test" name="get_video_image_node" type="get_video_image"/>
+
+	<node pkg="image_view" name="image_view_raw" type="image_view">
+		<remap from="image" to="camera_image_topic" />
+	</node>
+
+	<include file="$(find opencv_apps)/launch/edge_detection.launch"/>
+	<node pkg="image_view" name="image_view_processed" type="image_view">
+		<remap from="image" to="edge_detection/image" />
+	</node>
+	
+	<include file="$(find opencv_apps)/launch/hough_lines.launch"/>
+	<node pkg="image_view" name="image_view_processed_hough" type="image_view">
+		<remap from="image" to="hough_lines/image" />
+	</node>
+
+	<include file="$(find opencv_apps)/launch/contour_moments.launch"/>
+	<node pkg="image_view" name="image_view_processed_contour" type="image_view">
+		<remap from="image" to="contour_moments/image" />
+	</node>
+</launch>	

@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+
+<launch>
+	<node pkg="opencv_test" name="get_camera_image_node" type="get_camera_image"/>
+	<!--<include file="$(find opencv_apps)/launch/edge_detection.launch"/>-->
+	<!--<node pkg="image_view" name="image_view" type="image_view">
+		<param name="image" value="/camera_image_topic" />
+	</node>-->
+
+</launch>	

@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+
+<launch>
+	<node pkg="opencv_test" name="get_video_image_meddle_node" type="get_video_image_meddle"/>
+
+	<node pkg="image_view" name="image_view_raw" type="image_view">
+		<remap from="image" to="video_image_topic" />
+	</node>
+
+</launch>	

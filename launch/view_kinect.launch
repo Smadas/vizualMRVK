@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+
+<launch>
+	<node pkg="image_view" name="image_view_kinect" type="image_view">
+		<remap from="image" to="/my_kinect/hd/image_color" />
+	</node>
+	<include file="$(find opencv_apps)/launch/contour_moments.launch"/>
+	<node pkg="image_view" name="image_view_processed_contour" type="image_view">
+		<remap from="image" to="contour_moments/image" />
+	</node>
+	<include file="$(find opencv_apps)/launch/hough_lines_fromcontour.launch"/>
+	<node pkg="image_view" name="image_view_processed_hough" type="image_view">
+		<remap from="image" to="hough_lines/image" />
+	</node>
+</launch>	
