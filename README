@@ -1,0 +1,6 @@
+Repository for MRVK visual package
+
+<br/>
+
+Pavement recognition is launched with get_video_image_meddl.launch <br/>
+The file to be read must be in home/Videos/MRVKroute directory with name obed.mp4.
