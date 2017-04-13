@@ -1,0 +1,10 @@
+	struct fann *ann = fann_create_standard(num_layers, num_input, num_neurons_hidden, num_output);
+
+	//START set training parameters
+	fann_set_activation_function_hidden(ann, FANN_SIGMOID_SYMMETRIC);
+	fann_set_activation_function_output(ann, FANN_SIGMOID_SYMMETRIC);
+	fann_set_learning_momentum(ann, 0.9);
+	fann_set_learning_rate(ann, 0.6);
+	//END set training parameters
+
+	fann_train_on_file(ann, get_directory("training_vectors", "", "data").c_str(), max_epochs, epochs_between_reports, desired_error);
